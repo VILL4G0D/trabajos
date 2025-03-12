@@ -1,4 +1,4 @@
-# modelo.py
+#modelo.py
 class CuentaBancaria:
     def __init__(self):
         self.saldo = 0.0  # Inicializamos el saldo en 0
