@@ -1,6 +1,6 @@
 # controlador.py
-from Modelo import CuentaBancaria
-from Vista import Vista
+from modelo import CuentaBancaria
+from vista import Vista
 
 class Controlador:
     def __init__(self, modelo, vista):
@@ -33,5 +33,6 @@ class Controlador:
                 self.vista.mostrar_mensaje("No tienes suficiente saldo para realizar esta operación.")
     
     def consultar_saldo(self):
-        saldo = self.modelo.consultar_saldo()
-        self.vista.actualizar_saldo(saldo)
+        saldo = self.modelo.consultar_saldo()  # Obtiene el saldo desde el modelo
+        self.vista.actualizar_saldo(saldo)  # Actualiza la vista con el saldo
+        self.vista.mostrar_mensaje(f"Tu saldo actual es ${saldo:.2f}")  # Muestra el mensaje con el saldo
