@@ -1,8 +1,8 @@
 # main.py
 import tkinter as tk
-from Modelo import CuentaBancaria
-from Vista import Vista  # Aquí se cambia 'vista' por 'Vista' (nombre de la clase)
-from Controlador import Controlador
+from modelo import CuentaBancaria
+from vista import Vista  # Aquí se cambia 'vista' por 'Vista' (nombre de la clase)
+from controlador import Controlador
 
 # Programa Principal
 def main():
