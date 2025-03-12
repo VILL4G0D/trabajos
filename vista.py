@@ -8,7 +8,13 @@ class Vista:
         self.root = root
         self.root.title("Cuenta Bancaria")
         
-        # Crear componentes de la interfaz
+        # Solicitar el nombre del usuario
+        self.nombre_usuario = simpledialog.askstring("Nombre de Usuario", "Por favor, ingresa tu nombre:")
+        
+        # Mostrar saludo en la interfaz
+        self.saludo_label = tk.Label(root, text=f"Hola, {self.nombre_usuario}!")
+        self.saludo_label.pack()
+        
         self.saldo_label = tk.Label(root, text="Saldo: $0.00", font=("Arial", 14))
         self.saldo_label.pack(pady=10)
         
@@ -35,4 +41,11 @@ class Vista:
         return cantidad if cantidad is not None else 0
     
     def salir(self):
-        self.root.quit()
+        # Mostrar un mensaje de despedida antes de cerrar
+        messagebox.showinfo("Despedida", f"Chao, {self.nombre_usuario}!")
+        self.root.quit()  # Cierra la ventana
+
+# Crear la ventana raíz (root) de la aplicación
+root = tk.Tk()
+vista = Vista(root)
+root.mainloop()
